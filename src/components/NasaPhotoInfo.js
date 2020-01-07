@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import NasaCard from "./NasaCard";
 
 export default function NasaPhoto() {
   const [photo, setPhoto] = useState([]);
@@ -15,11 +14,16 @@ export default function NasaPhoto() {
         console.log("NO DATA", err);
       });
   }, []);
+  console.log(photo);
 
-  const pic = photo.hdurl;
   return (
-    <div className="container">
-      <img src={photo.hdurl} height="600px" width="75%" />
+    <div className="img-of-day">
+      <h2>{photo.title}</h2>
+      <h4>{photo.date}</h4>
+
+      <img src={photo.url} height="600px" width="75%" />
+      <p>Credit: {photo.copyright}</p>
+      <div className="explanation">{photo.explanation}</div>
     </div>
   );
 }
