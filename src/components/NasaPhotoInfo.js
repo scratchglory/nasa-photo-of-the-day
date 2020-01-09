@@ -11,7 +11,7 @@ import {
 import styled, { css } from "styled-components";
 
 const CardInfo = styled.div`
-  width: 75%;
+  width: 1200px;
   border: 2px dashed black;
   box-shadow: 20px 20px 8px #888888;
   margin: 2% auto;
